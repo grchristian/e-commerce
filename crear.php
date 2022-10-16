@@ -19,9 +19,10 @@ if (isset($_POST['submit'])) {
       "apellido" => $_POST['apellido'],
       "email"    => $_POST['email'],
       "edad"     => $_POST['edad'],
+      "password" => $_POST['password']
     );
 
-    $consultaSQL = "INSERT INTO usuarios (nombre, apellido, email, edad) values (:" . implode(", :", array_keys($usuario)) . ")";
+    $consultaSQL = "INSERT INTO usuarios (nombre, apellido, email, edad, password) values (:" . implode(", :", array_keys($usuario)) . ")";
 
     $sentencia = $conexion->prepare($consultaSQL);
     $sentencia->execute($usuario);
@@ -71,6 +72,10 @@ if (isset($resultado)) {
         <div class="form-group">
           <label for="edad">Edad</label>
           <input type="text" name="edad" id="edad" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="edad">Contraseña</label>
+          <input type="password" name="password" id="password" class="form-control">
         </div>
         <div class="form-group">
           <input type="submit" name="submit" class="btn btn-primary" value="Enviar">

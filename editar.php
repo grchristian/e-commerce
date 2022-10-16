@@ -23,7 +23,8 @@ if (isset($_POST['submit'])) {
       "nombre"    => $_POST['nombre'],
       "apellido"  => $_POST['apellido'],
       "email"     => $_POST['email'],
-      "edad"      => $_POST['edad']
+      "edad"      => $_POST['edad'],
+      "password"  => $_POST['password']
     ];
     
     $consultaSQL = "UPDATE usuarios SET
@@ -31,6 +32,7 @@ if (isset($_POST['submit'])) {
         apellido = :apellido,
         email = :email,
         edad = :edad,
+        password = :password,
         updated_at = NOW()
         WHERE id = :id";
     
@@ -125,6 +127,9 @@ if (isset($usuario) && $usuario) {
             <label for="edad">Edad</label>
             <input type="text" name="edad" id="edad" value="<?= escapar($usuario['edad']) ?>" class="form-control">
           </div>
+          <div class="form-group">
+            <label for="password">Contraseña</label>
+            <input type="password" name="password" id="password" value="<?= escapar($usuario['password']) ?>" class="form-control">
           <div class="form-group">
             <input type="submit" name="submit" class="btn btn-primary" value="Actualizar">
             <a class="btn btn-primary" href="index.php">Regresar al inicio</a>
