@@ -64,6 +64,9 @@ if ($error) {
   </div>
 </div>
 
+<!-- print session variables -->
+<!-- <?php echo "<pre>"; print_r($_SESSION); echo "</pre>"; ?> -->
+
 <div class="container">
   <div class="row">
     <div class="col-md-12">

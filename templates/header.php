@@ -12,7 +12,12 @@
 
 <body>
 <header>
-  <p>Aztecas shop</p>
-  <a href=""><div class="button">Account</div></a>
+  <a href="index.php" class="title" >Aztecas shop</a>
+  <?php if (isset($_SESSION['nombre'])): ?>
+    <a href="logout.php"><div class="button">Cerrar sesion</div></a>
+  <?php endif; ?>
+  <?php if (!isset($_SESSION['nombre'])): ?>
+    <a href="login.php"><div class="button">Iniciar sesion</div></a>
+  <?php endif; ?>
   <a href=""><div class="button">Settings</div></a>
 </header>
