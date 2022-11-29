@@ -16,6 +16,11 @@ header {
 a {
   text-decoration: none;
 }
+.nav{
+
+  align-items: center;
+  padding: 0 20px;
+}
 
 .button {
   width: 200px;
